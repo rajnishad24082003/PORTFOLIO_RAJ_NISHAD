@@ -52,6 +52,19 @@ export function Projects() {
               <div className="md:col-span-7">
                 <h3 className="font-serif text-5xl leading-none tracking-[-0.02em] md:text-6xl">{project.name}</h3>
                 <p className="mt-5 text-lg leading-relaxed text-ink-soft">{project.summary}</p>
+                {project.live && (
+                  <a
+                    href={project.live.href}
+                    target="_blank"
+                    rel="noopener"
+                    className="group mt-6 inline-flex items-center gap-2 rounded-full border border-ink px-4 py-2 text-sm transition-colors hover:bg-ink hover:text-paper"
+                  >
+                    {project.live.label}
+                    <span aria-hidden className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                      ↗
+                    </span>
+                  </a>
+                )}
               </div>
             </div>
 

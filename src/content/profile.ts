@@ -34,6 +34,8 @@ export type Project = {
   stack: string[];
   /** A left-to-right sketch of how a request moves through the system. */
   flow: FlowStep[];
+  /** Where visitors can try it. The label says what they will land on. */
+  live?: Link;
 };
 
 export type Figure = {
@@ -56,6 +58,8 @@ export const profile = {
     { label: "GitHub", href: "https://github.com/rajnishad24082003" },
     { label: "LeetCode", href: "https://leetcode.com/u/rajnishad24082003/" },
   ] satisfies Link[],
+  /** Drives the availability notice. ISO date of the last day at the current job. */
+  lastWorkingDay: "2026-12-01",
 };
 
 export const figures: Figure[] = [
@@ -110,6 +114,7 @@ export const projects: Project[] = [
       "Role-based access for owners, tenants and admins, with an owner-verification workflow to reduce fraudulent listings.",
     ],
     stack: ["Next.js", "Spring Boot", "PostgreSQL", "WebSocket"],
+    live: { label: "Visit live site", href: "https://140-238-162-30.sslip.io/" },
     flow: [
       { label: "Plain-language search", tech: "Next.js" },
       { label: "Query parser", tech: "LLM" },
@@ -128,6 +133,7 @@ export const projects: Project[] = [
       "Packaged and deployed as lightweight Docker containers.",
     ],
     stack: ["Python", "FastAPI", "Elasticsearch", "Hugging Face", "Docker"],
+    live: { label: "Try the API docs", href: "https://130-210-20-24.sslip.io/docs" },
     flow: [
       { label: "Text query", tech: "FastAPI" },
       { label: "Embeddings", tech: "Hugging Face" },
@@ -146,6 +152,7 @@ export const projects: Project[] = [
       "Around 30% lower client-side CPU usage than standard conferencing tools.",
     ],
     stack: ["WebRTC", "TypeScript", "Node.js", "React"],
+    live: { label: "Open the app", href: "https://rbl-sem6-hms.web.app/login" },
     flow: [
       { label: "Peer A", tech: "Browser" },
       { label: "Signalling", tech: "Node.js · handshake only" },
